@@ -196,7 +196,6 @@ describe('What season', () => {
                 () => getSeason([2019, '27', 0 + '1']),
                 () => getSeason(() => new Date())
             ], 'Invalid date!');
-
             assert.strictEqual(res.every($ => $ === CORRECT_RESULT_MSG), true);
         });
 

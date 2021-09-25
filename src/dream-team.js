@@ -14,11 +14,13 @@ import { NotImplementedError } from '../extensions/index.js';
  *
  */
 export default function createDreamTeam( members ) {
+  if (!Array.isArray(members)) return false;
   let filteredMembers = members.filter(el => (typeof el) == 'string');
-  filteredMembers = filteredMembers.forEach(el => el.trim());
+  filteredMembers = filteredMembers.map(el => el.replaceAll(" ", "").toUpperCase());
   filteredMembers.sort();
   let result = "";
   filteredMembers.forEach(el => result = result + el[0]);
   return result;
-  // remove line with error and write your code here
 }
+
+

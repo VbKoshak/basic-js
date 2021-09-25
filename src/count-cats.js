@@ -16,13 +16,15 @@ import { NotImplementedError } from '../extensions/index.js';
  */
 export default function countCats(mtx) {
   let count = 0;
+  let m,n;
 
-  let m = mtx.length;
-  if (m > 0)
-    let n = mtx[0].length;
-  else 
+  m = mtx.length;
+  if (m > 0) {
+    n = mtx[0].length;
+  } else {
     return 0;
-
+  }
+  
   for (let i = 0; i < m; i++) {
     for (let j = 0; j < n; j++) {
       if (mtx[i][j] == '^^') count++;
